@@ -17,15 +17,18 @@ header {
     background: #333;
     color: #fff;
     padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header nav ul {
     list-style: none;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -33,12 +36,13 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
+    color: #ddd;
     text-decoration: underline;
 }
-
 
 /* Main Sections */
 section {
@@ -48,28 +52,28 @@ section {
 
 section h1, section h2 {
     color: #444;
+    margin-bottom: 15px;
 }
 
 .container {
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: auto;
+    border-radius: 5px;
 }
 
-.tutorial-item {
-    margin-bottom: 20px;
-}
-
+/* Video Container */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
     max-width: 100%;
     background: #000;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .video-container iframe {
@@ -78,6 +82,7 @@ section h1, section h2 {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 /* Buttons */
@@ -88,14 +93,17 @@ section h1, section h2 {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
     background: #555;
+    transform: translateY(-2px);
 }
 
-header nav ul li {
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
         display: block;
         margin: 5px 0;
     }
