@@ -1,0 +1,103 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+/* Main Sections */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+section h1, section h2 {
+    color: #444;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.produtos {
+    padding: 20px;
+}
+
+.produto {
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.produto h3 {
+    padding: 10px;
+    background: #f9f9f9;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .produto {
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produto {
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+}
