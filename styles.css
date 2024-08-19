@@ -12,42 +12,35 @@ body {
     color: #333;
 }
 
-/* Header and Navigation */
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Home Section */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto; /* Remove a altura fixa */
+    background-color: #f0f0f0;
+    padding-top: 20px;
+    padding-bottom: 10px; /* Reduz o espaçamento na parte inferior */
+    margin-top: 0;
+    margin-bottom: 0; /* Remove a margem inferior */
 }
 
-header nav ul {
-    list-style: none;
+.intro {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
     text-align: center;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #ddd;
-    text-decoration: underline;
+    margin-bottom: 10px; /* Reduz o espaço inferior */
 }
 
 /* Main Sections */
 section {
     padding: 20px;
-    margin: 20px 0;
+    margin: 0; /* Remove as margens verticais */
 }
 
 section h1, section h2 {
