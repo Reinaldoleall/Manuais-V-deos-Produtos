@@ -32,7 +32,7 @@ body {
     max-width: 800px; /* Limite de largura */
     height: 500px;
     overflow: hidden;
-    border: 5px solid blue;
+    border: 5px solid;
 }
 
 .slide {
