@@ -26,7 +26,6 @@ body {
 
 .header-container h1 {
     font-size: 28px;
-    margin: 2;
 }
 
 .hamburger {
@@ -59,6 +58,7 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
+    padding: 8px 16px;
 }
 
 nav ul li a:hover {
@@ -74,70 +74,60 @@ nav ul li a:hover {
     #menu {
         display: none;
         position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #004c97;
+        top: 67px;
+                left: 0;
         width: 100%;
-        text-align: right;
-        padding: 10px 0;
+        background-color: #004c97;
     }
 
     #menu ul {
         flex-direction: column;
-        gap: 10px;
-    }
-
-    #menu-toggle:checked + .hamburger + #menu {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
-    nav ul li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
+    #menu ul li {
+        margin: -10px 0;
+    }
+
+    #menu-toggle:checked + label + #menu {
+        display: flex;
     }
 }
 
 #imagem-link {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+    display: flex;
+    align-items: center; /* Alinha a seta e o texto verticalmente */
+}
+
+#imagem-link img {
+    max-width: 30px;
+    height: 30px;
     border-radius: 0px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    margin-right: 0px; /* Espaçamento entre a seta e o texto */
+    display: inline-block;
+    margin-top: -12px;
 }
 
-#imagem-link:hover {
-    transform: scale(1.05);
-}
-
-/* Estilos das seções principais */
-main {
+/* Estilo das seções principais */
+.content-section {
     padding: 20px;
     background-color: #fff;
-}
-
-.content-section {
-    margin-bottom: 40px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .content-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #004c97;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .content-section p {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
+/* Galeria de produtos e vídeos */
 .product-gallery, .video-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -148,38 +138,35 @@ main {
     flex: 1 1 calc(33.333% - 20px);
     background-color: #f9f9f9;
     padding: 10px;
-    border: 1px solid #ddd;
+    border-radius: 8px;
     text-align: center;
-    transition: box-shadow 0.3s;
-}
-
-.product-item:hover, .video-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-item img, .video-item img {
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
     margin-bottom: 10px;
 }
 
-.product-item h3 {
-    font-size: 20px;
+.product-item h3, .video-item h3 {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
-.btn {
+.product-item a.btn, .video-item a.btn {
     display: inline-block;
+    padding: 10px 15px;
     background-color: #004c97;
     color: #fff;
-    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #003366;
+.product-item a.btn:hover, .video-item a.btn:hover {
+    background-color: #003a73;
 }
 
 /* Footer */
@@ -187,31 +174,39 @@ footer {
     background-color: #004c97;
     color: #fff;
     padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .footer-container {
-    max-width: 1020px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px 0;
 }
 
 .footer-section h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .footer-section p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .footer-bottom {
-    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .footer-bottom p {
     margin: 0;
-    font-size: 14px;
 }
+
 
