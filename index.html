@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Page Carousel Navigation with Proportional Scaling</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        .content {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%; /* Ajustado para refletir 3 páginas */
+            height: 100%;
+        }
+
+        .page {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            display: none; /* Inicialmente escondidos */
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel">
+    <div id="content" class="content">
+        <div id="page1" class="page">
+            <iframe src="inicio.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        </div>
+        <div id="page2" class="page">
+            <iframe src="https://loja.panasonic.com.br/" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        </div>
+        <div id="page3" class="page">
+            <iframe src="page3.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        </div>
+    </div>
+    <button id="leftArrow" class="arrow left-arrow" onclick="moveLeft()">⬅ Anterior</button>
+    <button id="rightArrow" class="arrow right-arrow" onclick="moveRight()">Próximo ➡</button>
+</div>
+
+<script>
+    let currentPage = 0;
+
+    function updateArrows() {
+        const leftArrow = document.getElementById('leftArrow');
+        const rightArrow = document.getElementById('rightArrow');
+        const totalPages = document.querySelectorAll('.page').length;
+
+        // Mostrar/ocultar botões com base na página atual
+        if (currentPage === 0) {
+            leftArrow.style.display = 'none';
+        } else {
+            leftArrow.style.display = 'block';
+        }
+
+        if (currentPage === totalPages - 1) {
+            rightArrow.style.display = 'none';
+        } else {
+            rightArrow.style.display = 'block';
+        }
+    }
+
+    function moveLeft() {
+        const content = document.getElementById('content');
+        if (currentPage > 0) {
+            currentPage--;
+            content.style.transform = `translateX(-${currentPage * 100}%)`;
+            updateArrows();
+        }
+    }
+
+    function moveRight() {
+        const content = document.getElementById('content');
+        const totalPages = document.querySelectorAll('.page').length;
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            content.style.transform = `translateX(-${currentPage * 100}%)`;
+            updateArrows();
+        }
+    }
+
+    // Inicializar a visibilidade dos botões
+    updateArrows();
+</script>
+
+</body>
+</html>
