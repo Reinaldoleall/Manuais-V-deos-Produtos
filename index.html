@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Page Carousel Navigation with Proportional Scaling</title>
+    <title>Full-Page Carousel Navigation with Links</title>
     <style>
         body, html {
             margin: 0;
@@ -14,6 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #f0f0f0;
         }
 
         .carousel {
@@ -28,7 +29,7 @@
         .content {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 100%; /* Ajustado para refletir 3 páginas */
+            width: 300%; /* Ajuste conforme o número de páginas */
             height: 100%;
         }
 
@@ -39,6 +40,7 @@
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
+            background: white; /* Ajuste conforme o design */
         }
 
         .arrow {
@@ -68,13 +70,13 @@
 <div class="carousel">
     <div id="content" class="content">
         <div id="page1" class="page">
-            <iframe src="inicio.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+            <a href="inicio.html" target="content-frame">Ir para Início</a>
         </div>
         <div id="page2" class="page">
-            <iframe src="https://loja.panasonic.com.br/" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+            <a href="https://loja.panasonic.com.br/" target="_blank">Ir para Loja Panasonic</a>
         </div>
         <div id="page3" class="page">
-            <iframe src="page3.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+            <a href="page3.html" target="content-frame">Ir para Página 3</a>
         </div>
     </div>
     <button id="leftArrow" class="arrow left-arrow" onclick="moveLeft()">⬅ Anterior</button>
