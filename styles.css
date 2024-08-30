@@ -86,7 +86,7 @@ nav ul li a:hover {
     }
 
     #menu ul li {
-        margin: -10px 0;
+        margin: 6px 0;
     }
 
     #menu-toggle:checked + label + #menu {
@@ -97,15 +97,6 @@ nav ul li a:hover {
 #imagem-link {
     display: flex;
     align-items: center; /* Alinha a seta e o texto verticalmente */
-}
-
-#imagem-link img {
-    max-width: 30px;
-    height: 30px;
-    border-radius: 0px;
-    margin-right: 0px; /* Espaçamento entre a seta e o texto */
-    display: inline-block;
-    margin-top: -12px;
 }
 
 /* Estilo das seções principais */
@@ -208,5 +199,3 @@ footer {
 .footer-bottom p {
     margin: 0;
 }
-
-
